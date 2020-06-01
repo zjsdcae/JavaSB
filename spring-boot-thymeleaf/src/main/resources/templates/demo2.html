@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf Demo</title>
+</head>
+<body>
+    <span th:text="${message}"></span>
+<!--    <span th:text="${secondLine}"></span>-->
+<h3>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>ID</th>-->
+<!--            <th>Name</th>-->
+<!--            <th>Age</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="User : ${list}">-->
+<!--            <td th:text="${User.id}"></td>-->
+<!--            <td th:text="${User.name}"></td>-->
+<!--            <td th:text="${User.age}"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+    Request:<span th:text="${#httpServletRequest.getAttribute('request')}"></span><br />
+    Session:<span th:text="${session.session}"></span><br />
+    Applicaiton:<span th:text="${application.application}"></span><br />
+</h3>
+
+<h3>Thymeleaf URLs</h3>
+<!--redirect to demo page without parameter-->
+<a th:href="@{~/demo}">Visit demo page</a>
+<!--redirect with parameter-->
+<!--<a th:href="@{~/demo(id=1, name=eric)}" vist demo page with parameter></a>-->
+    <a th:href="@{~/demo(id=1, name=eric)}">Visit Demo page With Parameter</a>
+</body>
+
+</html>
